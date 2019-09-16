@@ -27,7 +27,7 @@ namespace WebApplication2.Models
         public static async Task<string> GetFlightInfoAsync(string endpointUrl)
         {
             var httpClient = new HttpClient();
-            var response =  httpClient.GetAsync(endpointUrl).Result;
+            var response = httpClient.GetAsync(endpointUrl).Result;
             var result = await response.Content.ReadAsStringAsync();
 
             return result;
@@ -114,32 +114,29 @@ namespace WebApplication2.Models
         /// <returns></returns>
         public static async Task<string> PostSearchFlightAsync(string endpointUrl, string searchJsonObject)
         {
-           
-               
-                using (var content = new StringContent(searchJsonObject, Encoding.UTF8, "application/json"))
-                //HttpContent httpContent = CreateHttpContent(json);
-                using (var client = new HttpClient())
+            using (var content = new StringContent(searchJsonObject, Encoding.UTF8, "application/json"))
+            using (var client = new HttpClient())
+            {
+                try
                 {
-                    try
+                    HttpResponseMessage response = client.PostAsync(endpointUrl, content).Result;
+                    //var response = Task.Run(() => client.PostAsync(endpointUrl, content));
+                    //response.Wait();
+                    if (!response.IsSuccessStatusCode)
                     {
-                    HttpResponseMessage response = await client.PostAsync(endpointUrl, content); 
-                        
-
-                        if (!response.IsSuccessStatusCode)
-                        {
-                            return string.Empty;
-                        }
-                        string jsonResponse = await response.Content.ReadAsStringAsync();
-                        return jsonResponse;
+                        return string.Empty;
                     }
-                    catch(Exception ex)
-                    {
-                        throw ex;
-                    }
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    return jsonResponse;
                 }
-                                              
-               //System.Diagnostics.Debug.WriteLine(jsonResponse);               
-            
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            //System.Diagnostics.Debug.WriteLine(jsonResponse);               
+
         }
 
     }

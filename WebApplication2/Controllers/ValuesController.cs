@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,21 +13,21 @@ namespace WebApplication2.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        
+
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
-       // [HttpGet]
+        // [HttpGet]
         public string Get(int id)
         {
             return "value";
         }
 
         // POST api/values
-        [HttpPost]       
+        [HttpPost]
         public IHttpActionResult SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
         {
             var departurCity = searchFlightDetailsObject.Departure;
@@ -37,19 +38,20 @@ namespace WebApplication2.Controllers
 
             if (!string.IsNullOrEmpty(arrivalCity))
             {
-                 arrivalCityCode = RunAPI.GetFlightCityCode(RunAPI.CitiesTypeAheadEndPoint, arrivalCity);
+                arrivalCityCode = RunAPI.GetFlightCityCode(RunAPI.CitiesTypeAheadEndPoint, arrivalCity);
             }
 
             searchFlightDetailsObject.Departure = departureCityCode;
             searchFlightDetailsObject.Arrival = arrivalCityCode;
+            searchFlightDetailsObject.DepartureDate = Convert.ToDateTime(searchFlightDetailsObject.DepartureDate).ToString("MM/dd/yyyy");
 
             //Get searchFlightJsonObject
-            string searchFlightJsonObject = 
-                RunAPI.FormatFlightSearchJsonObject(searchFlightDetailsObject.Departure, 
-                                                    searchFlightDetailsObject.Arrival, 
-                                                    searchFlightDetailsObject.DepartureDate, 
-                                                    searchFlightDetailsObject.TotalAdults,
-                                                    Convert.ToInt32(searchFlightDetailsObject.TotalChildren));
+            string searchFlightJsonObject =
+                RunAPI.FormatFlightSearchJsonObject(searchFlightDetailsObject.Departure,
+                                                    searchFlightDetailsObject.Arrival,
+                                                    "12/26/2019",
+                                                    numberOfAdult: Convert.ToInt32(searchFlightDetailsObject.TotalAdults),
+                                                    numberOfChild: Convert.ToInt32(searchFlightDetailsObject.TotalChildren));
 
             //Search flights - Call Flight search endpoint
             var searchFlightsResult = RunAPI.PostSearchFlightAsync(RunAPI.SearchFlightEndPoint, searchFlightJsonObject).Result;
@@ -75,8 +77,6 @@ namespace WebApplication2.Controllers
             }
 
             return Json(searchFlightsResult);
-           
-
         }
 
         // PUT api/values/5
