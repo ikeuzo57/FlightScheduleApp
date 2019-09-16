@@ -1,0 +1,1522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29A27864-2C8F-42B6-B826-EE2ADE0ADFCC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2</RootNamespace>
+    <AssemblyName>WebApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RunAPI.cs" />
+    <Compile Include="Models\SearchFlightDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-all.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\lineicons.css" />
+    <Content Include="Content\mystyles.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <Content Include="Content\weather-icons.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\1000x400.png" />
+    <Content Include="img\1000x652.png" />
+    <Content Include="img\100x100.png" />
+    <Content Include="img\100x22.png" />
+    <Content Include="img\101x64.png" />
+    <Content Include="img\102x64.png" />
+    <Content Include="img\1100x360.png" />
+    <Content Include="img\1140x480.png" />
+    <Content Include="img\120x55.png" />
+    <Content Include="img\1280x853.png" />
+    <Content Include="img\149x119.png" />
+    <Content Include="img\1500x300.png" />
+    <Content Include="img\1500x400.png" />
+    <Content Include="img\1500x500.png" />
+    <Content Include="img\1500x800.png" />
+    <Content Include="img\1500x801.png" />
+    <Content Include="img\1500x994.png" />
+    <Content Include="img\150x167.png" />
+    <Content Include="img\150x184.png" />
+    <Content Include="img\1600x1000.png" />
+    <Content Include="img\1600x500.png" />
+    <Content Include="img\1800x500.png" />
+    <Content Include="img\180x165.png" />
+    <Content Include="img\180x205.png" />
+    <Content Include="img\192x88.png" />
+    <Content Include="img\200x124.png" />
+    <Content Include="img\200x200.png" />
+    <Content Include="img\200x201.png" />
+    <Content Include="img\203x608.png" />
+    <Content Include="img\251x251.png" />
+    <Content Include="img\275x275.png" />
+    <Content Include="img\280x205.png" />
+    <Content Include="img\300x400.png" />
+    <Content Include="img\300x500.png" />
+    <Content Include="img\300x600.png" />
+    <Content Include="img\300x700.png" />
+    <Content Include="img\300x800.png" />
+    <Content Include="img\310x304.png" />
+    <Content Include="img\315x225.png" />
+    <Content Include="img\320x1280.png" />
+    <Content Include="img\343x257.png" />
+    <Content Include="img\350x232.png" />
+    <Content Include="img\350x260.png" />
+    <Content Include="img\350x435.png" />
+    <Content Include="img\351x253.png" />
+    <Content Include="img\370x165.png" />
+    <Content Include="img\370x205.png" />
+    <Content Include="img\374x374.png" />
+    <Content Include="img\400x360.png" />
+    <Content Include="img\400x400.png" />
+    <Content Include="img\400x500.png" />
+    <Content Include="img\439x198.png" />
+    <Content Include="img\450x450.png" />
+    <Content Include="img\48x48.png" />
+    <Content Include="img\500x350.png" />
+    <Content Include="img\500x400.png" />
+    <Content Include="img\500x800.png" />
+    <Content Include="img\50x50.png" />
+    <Content Include="img\51x32.png" />
+    <Content Include="img\550x360.png" />
+    <Content Include="img\553x103.png" />
+    <Content Include="img\555x200.png" />
+    <Content Include="img\555x260.png" />
+    <Content Include="img\558x103.png" />
+    <Content Include="img\600x365.png" />
+    <Content Include="img\600x398.png" />
+    <Content Include="img\600x413.png" />
+    <Content Include="img\600x600.png" />
+    <Content Include="img\600x720.png" />
+    <Content Include="img\60x25.png" />
+    <Content Include="img\647x647.png" />
+    <Content Include="img\650x360.png" />
+    <Content Include="img\650x475.png" />
+    <Content Include="img\650x600.png" />
+    <Content Include="img\67x25.png" />
+    <Content Include="img\700x400.png" />
+    <Content Include="img\700x570.png" />
+    <Content Include="img\700x800.png" />
+    <Content Include="img\70x70.png" />
+    <Content Include="img\730x260.png" />
+    <Content Include="img\730x435.png" />
+    <Content Include="img\800x400.png" />
+    <Content Include="img\800x500.png" />
+    <Content Include="img\800x600.png" />
+    <Content Include="img\800x800.png" />
+    <Content Include="img\820x360.png" />
+    <Content Include="img\850x400.png" />
+    <Content Include="img\860x360.png" />
+    <Content Include="img\900x500.png" />
+    <Content Include="img\950x630.png" />
+    <Content Include="img\brands\._apple.png" />
+    <Content Include="img\brands\._play-market.png" />
+    <Content Include="img\brands\apple.png" />
+    <Content Include="img\brands\play-market.png" />
+    <Content Include="img\credit-icons\._2checkout-curved-128px.png" />
+    <Content Include="img\credit-icons\._2checkout-curved-32px.png" />
+    <Content Include="img\credit-icons\._2checkout-curved-64px.png" />
+    <Content Include="img\credit-icons\._2checkout-straight-128px.png" />
+    <Content Include="img\credit-icons\._2checkout-straight-32px.png" />
+    <Content Include="img\credit-icons\._2checkout-straight-64px.png" />
+    <Content Include="img\credit-icons\._american-express-curved-128px.png" />
+    <Content Include="img\credit-icons\._american-express-curved-32px.png" />
+    <Content Include="img\credit-icons\._american-express-curved-64px.png" />
+    <Content Include="img\credit-icons\._american-express-straight-128px.png" />
+    <Content Include="img\credit-icons\._american-express-straight-32px.png" />
+    <Content Include="img\credit-icons\._american-express-straight-64px.png" />
+    <Content Include="img\credit-icons\._cirrus-curved-128px.png" />
+    <Content Include="img\credit-icons\._cirrus-curved-32px.png" />
+    <Content Include="img\credit-icons\._cirrus-curved-64px.png" />
+    <Content Include="img\credit-icons\._cirrus-straight-128px.png" />
+    <Content Include="img\credit-icons\._cirrus-straight-32px.png" />
+    <Content Include="img\credit-icons\._cirrus-straight-64px.png" />
+    <Content Include="img\credit-icons\._delta-curved-128px.png" />
+    <Content Include="img\credit-icons\._delta-curved-32px.png" />
+    <Content Include="img\credit-icons\._delta-curved-64px.png" />
+    <Content Include="img\credit-icons\._delta-straight-128px.png" />
+    <Content Include="img\credit-icons\._delta-straight-32px.png" />
+    <Content Include="img\credit-icons\._delta-straight-64px.png" />
+    <Content Include="img\credit-icons\._direct-debit-curved-128px.png" />
+    <Content Include="img\credit-icons\._direct-debit-curved-32px.png" />
+    <Content Include="img\credit-icons\._direct-debit-curved-64px.png" />
+    <Content Include="img\credit-icons\._direct-debit-straight-128px.png" />
+    <Content Include="img\credit-icons\._direct-debit-straight-32px.png" />
+    <Content Include="img\credit-icons\._direct-debit-straight-64px.png" />
+    <Content Include="img\credit-icons\._discover-curved-128px.png" />
+    <Content Include="img\credit-icons\._discover-curved-32px.png" />
+    <Content Include="img\credit-icons\._discover-curved-64px.png" />
+    <Content Include="img\credit-icons\._discover-straight-128px.png" />
+    <Content Include="img\credit-icons\._discover-straight-32px.png" />
+    <Content Include="img\credit-icons\._discover-straight-64px.png" />
+    <Content Include="img\credit-icons\._ebay-curved-128px.png" />
+    <Content Include="img\credit-icons\._ebay-curved-32px.png" />
+    <Content Include="img\credit-icons\._ebay-curved-64px.png" />
+    <Content Include="img\credit-icons\._ebay-straight-128px.png" />
+    <Content Include="img\credit-icons\._ebay-straight-32px.png" />
+    <Content Include="img\credit-icons\._ebay-straight-64px.png" />
+    <Content Include="img\credit-icons\._google-checkout-curved-128px.png" />
+    <Content Include="img\credit-icons\._google-checkout-curved-32px.png" />
+    <Content Include="img\credit-icons\._google-checkout-curved-64px.png" />
+    <Content Include="img\credit-icons\._google-checkout-straight-128px.png" />
+    <Content Include="img\credit-icons\._google-checkout-straight-32px.png" />
+    <Content Include="img\credit-icons\._google-checkout-straight-64px.png" />
+    <Content Include="img\credit-icons\._maestro-curved-128px.png" />
+    <Content Include="img\credit-icons\._maestro-curved-32px.png" />
+    <Content Include="img\credit-icons\._maestro-curved-64px.png" />
+    <Content Include="img\credit-icons\._maestro-straight-128px.png" />
+    <Content Include="img\credit-icons\._maestro-straight-32px.png" />
+    <Content Include="img\credit-icons\._maestro-straight-64px.png" />
+    <Content Include="img\credit-icons\._mastercard-curved-128px.png" />
+    <Content Include="img\credit-icons\._mastercard-curved-32px.png" />
+    <Content Include="img\credit-icons\._mastercard-curved-64px.png" />
+    <Content Include="img\credit-icons\._mastercard-straight-128px.png" />
+    <Content Include="img\credit-icons\._mastercard-straight-32px.png" />
+    <Content Include="img\credit-icons\._mastercard-straight-64px.png" />
+    <Content Include="img\credit-icons\._moneybookers-curved-128px.png" />
+    <Content Include="img\credit-icons\._moneybookers-curved-32px.png" />
+    <Content Include="img\credit-icons\._moneybookers-curved-64px.png" />
+    <Content Include="img\credit-icons\._moneybookers-straight-128px.png" />
+    <Content Include="img\credit-icons\._moneybookers-straight-32px.png" />
+    <Content Include="img\credit-icons\._moneybookers-straight-64px.png" />
+    <Content Include="img\credit-icons\._paypal-curved-128px.png" />
+    <Content Include="img\credit-icons\._paypal-curved-32px.png" />
+    <Content Include="img\credit-icons\._paypal-curved-64px.png" />
+    <Content Include="img\credit-icons\._paypal-straight-128px.png" />
+    <Content Include="img\credit-icons\._paypal-straight-32px.png" />
+    <Content Include="img\credit-icons\._paypal-straight-64px.png" />
+    <Content Include="img\credit-icons\._sagepay-curved-128px.png" />
+    <Content Include="img\credit-icons\._sagepay-curved-32px.png" />
+    <Content Include="img\credit-icons\._sagepay-curved-64px.png" />
+    <Content Include="img\credit-icons\._sagepay-straight-128px.png" />
+    <Content Include="img\credit-icons\._sagepay-straight-32px.png" />
+    <Content Include="img\credit-icons\._sagepay-straight-64px.png" />
+    <Content Include="img\credit-icons\._solo-curved-128px.png" />
+    <Content Include="img\credit-icons\._solo-curved-32px.png" />
+    <Content Include="img\credit-icons\._solo-curved-64px.png" />
+    <Content Include="img\credit-icons\._solo-straight-128px.png" />
+    <Content Include="img\credit-icons\._solo-straight-32px.png" />
+    <Content Include="img\credit-icons\._solo-straight-64px.png" />
+    <Content Include="img\credit-icons\._switch-curved-128px.png" />
+    <Content Include="img\credit-icons\._switch-curved-32px.png" />
+    <Content Include="img\credit-icons\._switch-curved-64px.png" />
+    <Content Include="img\credit-icons\._switch-straight-128px.png" />
+    <Content Include="img\credit-icons\._switch-straight-32px.png" />
+    <Content Include="img\credit-icons\._switch-straight-64px.png" />
+    <Content Include="img\credit-icons\._visa-curved-128px.png" />
+    <Content Include="img\credit-icons\._visa-curved-32px.png" />
+    <Content Include="img\credit-icons\._visa-curved-64px.png" />
+    <Content Include="img\credit-icons\._visa-electron-curved-128px.png" />
+    <Content Include="img\credit-icons\._visa-electron-curved-32px.png" />
+    <Content Include="img\credit-icons\._visa-electron-curved-64px.png" />
+    <Content Include="img\credit-icons\._visa-electron-straight-128px.png" />
+    <Content Include="img\credit-icons\._visa-electron-straight-32px.png" />
+    <Content Include="img\credit-icons\._visa-electron-straight-64px.png" />
+    <Content Include="img\credit-icons\._visa-straight-128px.png" />
+    <Content Include="img\credit-icons\._visa-straight-32px.png" />
+    <Content Include="img\credit-icons\._visa-straight-64px.png" />
+    <Content Include="img\credit-icons\._western-union-curved-128px.png" />
+    <Content Include="img\credit-icons\._western-union-curved-32px.png" />
+    <Content Include="img\credit-icons\._western-union-curved-64px.png" />
+    <Content Include="img\credit-icons\._western-union-straight-128px.png" />
+    <Content Include="img\credit-icons\._western-union-straight-32px.png" />
+    <Content Include="img\credit-icons\._western-union-straight-64px.png" />
+    <Content Include="img\credit-icons\2checkout-curved-128px.png" />
+    <Content Include="img\credit-icons\2checkout-curved-32px.png" />
+    <Content Include="img\credit-icons\2checkout-curved-64px.png" />
+    <Content Include="img\credit-icons\2checkout-straight-128px.png" />
+    <Content Include="img\credit-icons\2checkout-straight-32px.png" />
+    <Content Include="img\credit-icons\2checkout-straight-64px.png" />
+    <Content Include="img\credit-icons\american-express-curved-128px.png" />
+    <Content Include="img\credit-icons\american-express-curved-32px.png" />
+    <Content Include="img\credit-icons\american-express-curved-64px.png" />
+    <Content Include="img\credit-icons\american-express-straight-128px.png" />
+    <Content Include="img\credit-icons\american-express-straight-32px.png" />
+    <Content Include="img\credit-icons\american-express-straight-64px.png" />
+    <Content Include="img\credit-icons\cirrus-curved-128px.png" />
+    <Content Include="img\credit-icons\cirrus-curved-32px.png" />
+    <Content Include="img\credit-icons\cirrus-curved-64px.png" />
+    <Content Include="img\credit-icons\cirrus-straight-128px.png" />
+    <Content Include="img\credit-icons\cirrus-straight-32px.png" />
+    <Content Include="img\credit-icons\cirrus-straight-64px.png" />
+    <Content Include="img\credit-icons\delta-curved-128px.png" />
+    <Content Include="img\credit-icons\delta-curved-32px.png" />
+    <Content Include="img\credit-icons\delta-curved-64px.png" />
+    <Content Include="img\credit-icons\delta-straight-128px.png" />
+    <Content Include="img\credit-icons\delta-straight-32px.png" />
+    <Content Include="img\credit-icons\delta-straight-64px.png" />
+    <Content Include="img\credit-icons\direct-debit-curved-128px.png" />
+    <Content Include="img\credit-icons\direct-debit-curved-32px.png" />
+    <Content Include="img\credit-icons\direct-debit-curved-64px.png" />
+    <Content Include="img\credit-icons\direct-debit-straight-128px.png" />
+    <Content Include="img\credit-icons\direct-debit-straight-32px.png" />
+    <Content Include="img\credit-icons\direct-debit-straight-64px.png" />
+    <Content Include="img\credit-icons\discover-curved-128px.png" />
+    <Content Include="img\credit-icons\discover-curved-32px.png" />
+    <Content Include="img\credit-icons\discover-curved-64px.png" />
+    <Content Include="img\credit-icons\discover-straight-128px.png" />
+    <Content Include="img\credit-icons\discover-straight-32px.png" />
+    <Content Include="img\credit-icons\discover-straight-64px.png" />
+    <Content Include="img\credit-icons\ebay-curved-128px.png" />
+    <Content Include="img\credit-icons\ebay-curved-32px.png" />
+    <Content Include="img\credit-icons\ebay-curved-64px.png" />
+    <Content Include="img\credit-icons\ebay-straight-128px.png" />
+    <Content Include="img\credit-icons\ebay-straight-32px.png" />
+    <Content Include="img\credit-icons\ebay-straight-64px.png" />
+    <Content Include="img\credit-icons\google-checkout-curved-128px.png" />
+    <Content Include="img\credit-icons\google-checkout-curved-32px.png" />
+    <Content Include="img\credit-icons\google-checkout-curved-64px.png" />
+    <Content Include="img\credit-icons\google-checkout-straight-128px.png" />
+    <Content Include="img\credit-icons\google-checkout-straight-32px.png" />
+    <Content Include="img\credit-icons\google-checkout-straight-64px.png" />
+    <Content Include="img\credit-icons\maestro-curved-128px.png" />
+    <Content Include="img\credit-icons\maestro-curved-32px.png" />
+    <Content Include="img\credit-icons\maestro-curved-64px.png" />
+    <Content Include="img\credit-icons\maestro-straight-128px.png" />
+    <Content Include="img\credit-icons\maestro-straight-32px.png" />
+    <Content Include="img\credit-icons\maestro-straight-64px.png" />
+    <Content Include="img\credit-icons\mastercard-curved-128px.png" />
+    <Content Include="img\credit-icons\mastercard-curved-32px.png" />
+    <Content Include="img\credit-icons\mastercard-curved-64px.png" />
+    <Content Include="img\credit-icons\mastercard-straight-128px.png" />
+    <Content Include="img\credit-icons\mastercard-straight-32px.png" />
+    <Content Include="img\credit-icons\mastercard-straight-64px.png" />
+    <Content Include="img\credit-icons\moneybookers-curved-128px.png" />
+    <Content Include="img\credit-icons\moneybookers-curved-32px.png" />
+    <Content Include="img\credit-icons\moneybookers-curved-64px.png" />
+    <Content Include="img\credit-icons\moneybookers-straight-128px.png" />
+    <Content Include="img\credit-icons\moneybookers-straight-32px.png" />
+    <Content Include="img\credit-icons\moneybookers-straight-64px.png" />
+    <Content Include="img\credit-icons\paypal-curved-128px.png" />
+    <Content Include="img\credit-icons\paypal-curved-32px.png" />
+    <Content Include="img\credit-icons\paypal-curved-64px.png" />
+    <Content Include="img\credit-icons\paypal-straight-128px.png" />
+    <Content Include="img\credit-icons\paypal-straight-32px.png" />
+    <Content Include="img\credit-icons\paypal-straight-64px.png" />
+    <Content Include="img\credit-icons\sagepay-curved-128px.png" />
+    <Content Include="img\credit-icons\sagepay-curved-32px.png" />
+    <Content Include="img\credit-icons\sagepay-curved-64px.png" />
+    <Content Include="img\credit-icons\sagepay-straight-128px.png" />
+    <Content Include="img\credit-icons\sagepay-straight-32px.png" />
+    <Content Include="img\credit-icons\sagepay-straight-64px.png" />
+    <Content Include="img\credit-icons\solo-curved-128px.png" />
+    <Content Include="img\credit-icons\solo-curved-32px.png" />
+    <Content Include="img\credit-icons\solo-curved-64px.png" />
+    <Content Include="img\credit-icons\solo-straight-128px.png" />
+    <Content Include="img\credit-icons\solo-straight-32px.png" />
+    <Content Include="img\credit-icons\solo-straight-64px.png" />
+    <Content Include="img\credit-icons\switch-curved-128px.png" />
+    <Content Include="img\credit-icons\switch-curved-32px.png" />
+    <Content Include="img\credit-icons\switch-curved-64px.png" />
+    <Content Include="img\credit-icons\switch-straight-128px.png" />
+    <Content Include="img\credit-icons\switch-straight-32px.png" />
+    <Content Include="img\credit-icons\switch-straight-64px.png" />
+    <Content Include="img\credit-icons\visa-curved-128px.png" />
+    <Content Include="img\credit-icons\visa-curved-32px.png" />
+    <Content Include="img\credit-icons\visa-curved-64px.png" />
+    <Content Include="img\credit-icons\visa-electron-curved-128px.png" />
+    <Content Include="img\credit-icons\visa-electron-curved-32px.png" />
+    <Content Include="img\credit-icons\visa-electron-curved-64px.png" />
+    <Content Include="img\credit-icons\visa-electron-straight-128px.png" />
+    <Content Include="img\credit-icons\visa-electron-straight-32px.png" />
+    <Content Include="img\credit-icons\visa-electron-straight-64px.png" />
+    <Content Include="img\credit-icons\visa-straight-128px.png" />
+    <Content Include="img\credit-icons\visa-straight-32px.png" />
+    <Content Include="img\credit-icons\visa-straight-64px.png" />
+    <Content Include="img\credit-icons\western-union-curved-128px.png" />
+    <Content Include="img\credit-icons\western-union-curved-32px.png" />
+    <Content Include="img\credit-icons\western-union-curved-64px.png" />
+    <Content Include="img\credit-icons\western-union-straight-128px.png" />
+    <Content Include="img\credit-icons\western-union-straight-32px.png" />
+    <Content Include="img\credit-icons\western-union-straight-64px.png" />
+    <Content Include="img\flags\._Afghanistan.png" />
+    <Content Include="img\flags\._African Union.png" />
+    <Content Include="img\flags\._Albania.png" />
+    <Content Include="img\flags\._Algeria.png" />
+    <Content Include="img\flags\._American Samoa.png" />
+    <Content Include="img\flags\._Andorra.png" />
+    <Content Include="img\flags\._Angola.png" />
+    <Content Include="img\flags\._Anguilla.png" />
+    <Content Include="img\flags\._Antarctica.png" />
+    <Content Include="img\flags\._Antigua &amp; Barbuda.png" />
+    <Content Include="img\flags\._Arab League.png" />
+    <Content Include="img\flags\._Argentina.png" />
+    <Content Include="img\flags\._Armenia.png" />
+    <Content Include="img\flags\._Aruba.png" />
+    <Content Include="img\flags\._ASEAN.png" />
+    <Content Include="img\flags\._Australia.png" />
+    <Content Include="img\flags\._Austria.png" />
+    <Content Include="img\flags\._Azerbaijan.png" />
+    <Content Include="img\flags\._Bahamas.png" />
+    <Content Include="img\flags\._Bahrain.png" />
+    <Content Include="img\flags\._Bangladesh.png" />
+    <Content Include="img\flags\._Barbados.png" />
+    <Content Include="img\flags\._Belarus.png" />
+    <Content Include="img\flags\._Belgium.png" />
+    <Content Include="img\flags\._Belize.png" />
+    <Content Include="img\flags\._Benin.png" />
+    <Content Include="img\flags\._Bermuda.png" />
+    <Content Include="img\flags\._Bhutan.png" />
+    <Content Include="img\flags\._Bolivia.png" />
+    <Content Include="img\flags\._Bosnia &amp; Herzegovina.png" />
+    <Content Include="img\flags\._Botswana.png" />
+    <Content Include="img\flags\._Brazil.png" />
+    <Content Include="img\flags\._Brunei.png" />
+    <Content Include="img\flags\._Bulgaria.png" />
+    <Content Include="img\flags\._Burkina Faso.png" />
+    <Content Include="img\flags\._Burundi.png" />
+    <Content Include="img\flags\._Cambodja.png" />
+    <Content Include="img\flags\._Cameroon.png" />
+    <Content Include="img\flags\._Canada.png" />
+    <Content Include="img\flags\._Cape Verde.png" />
+    <Content Include="img\flags\._CARICOM.png" />
+    <Content Include="img\flags\._Cayman Islands.png" />
+    <Content Include="img\flags\._Central African Republic.png" />
+    <Content Include="img\flags\._Chad.png" />
+    <Content Include="img\flags\._Chile.png" />
+    <Content Include="img\flags\._China.png" />
+    <Content Include="img\flags\._CIS.png" />
+    <Content Include="img\flags\._Colombia.png" />
+    <Content Include="img\flags\._Commonwealth.png" />
+    <Content Include="img\flags\._Comoros.png" />
+    <Content Include="img\flags\._Congo-Brazzaville.png" />
+    <Content Include="img\flags\._Congo-Kinshasa%28Zaire%29.png" />
+    <Content Include="img\flags\._Cook Islands.png" />
+    <Content Include="img\flags\._Costa Rica.png" />
+    <Content Include="img\flags\._Cote d%27Ivoire.png" />
+    <Content Include="img\flags\._Croatia.png" />
+    <Content Include="img\flags\._Cuba.png" />
+    <Content Include="img\flags\._Cyprus.png" />
+    <Content Include="img\flags\._Czech Republic.png" />
+    <Content Include="img\flags\._Denmark.png" />
+    <Content Include="img\flags\._Djibouti.png" />
+    <Content Include="img\flags\._Dominica.png" />
+    <Content Include="img\flags\._Dominican Republic.png" />
+    <Content Include="img\flags\._Ecuador.png" />
+    <Content Include="img\flags\._Egypt.png" />
+    <Content Include="img\flags\._El Salvador.png" />
+    <Content Include="img\flags\._England.png" />
+    <Content Include="img\flags\._Equatorial Guinea.png" />
+    <Content Include="img\flags\._Eritrea.png" />
+    <Content Include="img\flags\._Estonia.png" />
+    <Content Include="img\flags\._Ethiopia.png" />
+    <Content Include="img\flags\._European Union.png" />
+    <Content Include="img\flags\._Faroes.png" />
+    <Content Include="img\flags\._Fiji.png" />
+    <Content Include="img\flags\._Finland.png" />
+    <Content Include="img\flags\._France.png" />
+    <Content Include="img\flags\._Gabon.png" />
+    <Content Include="img\flags\._Gambia.png" />
+    <Content Include="img\flags\._Georgia.png" />
+    <Content Include="img\flags\._Germany.png" />
+    <Content Include="img\flags\._Ghana.png" />
+    <Content Include="img\flags\._Gibraltar.png" />
+    <Content Include="img\flags\._Greece.png" />
+    <Content Include="img\flags\._Greenland.png" />
+    <Content Include="img\flags\._Grenada.png" />
+    <Content Include="img\flags\._Guadeloupe.png" />
+    <Content Include="img\flags\._Guam.png" />
+    <Content Include="img\flags\._Guatemala.png" />
+    <Content Include="img\flags\._Guernsey.png" />
+    <Content Include="img\flags\._Guinea-Bissau.png" />
+    <Content Include="img\flags\._Guinea.png" />
+    <Content Include="img\flags\._Guyana.png" />
+    <Content Include="img\flags\._Haiti.png" />
+    <Content Include="img\flags\._Honduras.png" />
+    <Content Include="img\flags\._Hong Kong.png" />
+    <Content Include="img\flags\._Hungary.png" />
+    <Content Include="img\flags\._Iceland.png" />
+    <Content Include="img\flags\._India.png" />
+    <Content Include="img\flags\._Indonezia.png" />
+    <Content Include="img\flags\._Iran.png" />
+    <Content Include="img\flags\._Iraq.png" />
+    <Content Include="img\flags\._Ireland.png" />
+    <Content Include="img\flags\._Islamic Conference.png" />
+    <Content Include="img\flags\._Isle of Man.png" />
+    <Content Include="img\flags\._Israel.png" />
+    <Content Include="img\flags\._Italy.png" />
+    <Content Include="img\flags\._Jamaica.png" />
+    <Content Include="img\flags\._Japan.png" />
+    <Content Include="img\flags\._Jersey.png" />
+    <Content Include="img\flags\._Jordan.png" />
+    <Content Include="img\flags\._Kazakhstan.png" />
+    <Content Include="img\flags\._Kenya.png" />
+    <Content Include="img\flags\._Kiribati.png" />
+    <Content Include="img\flags\._Kosovo.png" />
+    <Content Include="img\flags\._Kuwait.png" />
+    <Content Include="img\flags\._Kyrgyzstan.png" />
+    <Content Include="img\flags\._Laos.png" />
+    <Content Include="img\flags\._Latvia.png" />
+    <Content Include="img\flags\._Lebanon.png" />
+    <Content Include="img\flags\._Lesotho.png" />
+    <Content Include="img\flags\._Liberia.png" />
+    <Content Include="img\flags\._Libya.png" />
+    <Content Include="img\flags\._Liechtenshein.png" />
+    <Content Include="img\flags\._Lithuania.png" />
+    <Content Include="img\flags\._Luxembourg.png" />
+    <Content Include="img\flags\._Macao.png" />
+    <Content Include="img\flags\._Macedonia.png" />
+    <Content Include="img\flags\._Madagascar.png" />
+    <Content Include="img\flags\._Malawi.png" />
+    <Content Include="img\flags\._Malaysia.png" />
+    <Content Include="img\flags\._Maldives.png" />
+    <Content Include="img\flags\._Mali.png" />
+    <Content Include="img\flags\._Malta.png" />
+    <Content Include="img\flags\._Marshall Islands.png" />
+    <Content Include="img\flags\._Martinique.png" />
+    <Content Include="img\flags\._Mauritania.png" />
+    <Content Include="img\flags\._Mauritius.png" />
+    <Content Include="img\flags\._Mexico.png" />
+    <Content Include="img\flags\._Micronesia.png" />
+    <Content Include="img\flags\._Moldova.png" />
+    <Content Include="img\flags\._Monaco.png" />
+    <Content Include="img\flags\._Mongolia.png" />
+    <Content Include="img\flags\._Montenegro.png" />
+    <Content Include="img\flags\._Montserrat.png" />
+    <Content Include="img\flags\._Morocco.png" />
+    <Content Include="img\flags\._Mozambique.png" />
+    <Content Include="img\flags\._Myanmar%28Burma%29.png" />
+    <Content Include="img\flags\._Namibia.png" />
+    <Content Include="img\flags\._NATO.png" />
+    <Content Include="img\flags\._Nauru.png" />
+    <Content Include="img\flags\._Nepal.png" />
+    <Content Include="img\flags\._Netherlands Antilles.png" />
+    <Content Include="img\flags\._Netherlands.png" />
+    <Content Include="img\flags\._New Caledonia.png" />
+    <Content Include="img\flags\._New Zealand.png" />
+    <Content Include="img\flags\._Nicaragua.png" />
+    <Content Include="img\flags\._Niger.png" />
+    <Content Include="img\flags\._Nigeria.png" />
+    <Content Include="img\flags\._North Korea.png" />
+    <Content Include="img\flags\._Northern Cyprus.png" />
+    <Content Include="img\flags\._Northern Ireland.png" />
+    <Content Include="img\flags\._Norway.png" />
+    <Content Include="img\flags\._Olimpic Movement.png" />
+    <Content Include="img\flags\._Oman.png" />
+    <Content Include="img\flags\._OPEC.png" />
+    <Content Include="img\flags\._Pakistan.png" />
+    <Content Include="img\flags\._Palau.png" />
+    <Content Include="img\flags\._Palestine.png" />
+    <Content Include="img\flags\._Panama.png" />
+    <Content Include="img\flags\._Papua New Guinea.png" />
+    <Content Include="img\flags\._Paraguay.png" />
+    <Content Include="img\flags\._Peru.png" />
+    <Content Include="img\flags\._Philippines.png" />
+    <Content Include="img\flags\._Poland.png" />
+    <Content Include="img\flags\._Portugal.png" />
+    <Content Include="img\flags\._Puerto Rico.png" />
+    <Content Include="img\flags\._Qatar.png" />
+    <Content Include="img\flags\._Red Cross.png" />
+    <Content Include="img\flags\._Reunion.png" />
+    <Content Include="img\flags\._Romania.png" />
+    <Content Include="img\flags\._Russian Federation.png" />
+    <Content Include="img\flags\._Rwanda.png" />
+    <Content Include="img\flags\._Saint Lucia.png" />
+    <Content Include="img\flags\._Samoa.png" />
+    <Content Include="img\flags\._San Marino.png" />
+    <Content Include="img\flags\._Sao Tome &amp; Principe.png" />
+    <Content Include="img\flags\._Saudi Arabia.png" />
+    <Content Include="img\flags\._Scotland.png" />
+    <Content Include="img\flags\._Senegal.png" />
+    <Content Include="img\flags\._Serbia%28Yugoslavia%29.png" />
+    <Content Include="img\flags\._Seychelles.png" />
+    <Content Include="img\flags\._Sierra Leone.png" />
+    <Content Include="img\flags\._Singapore.png" />
+    <Content Include="img\flags\._Slovakia.png" />
+    <Content Include="img\flags\._Slovenia.png" />
+    <Content Include="img\flags\._Solomon Islands.png" />
+    <Content Include="img\flags\._Somalia.png" />
+    <Content Include="img\flags\._Somaliland.png" />
+    <Content Include="img\flags\._South Africa.png" />
+    <Content Include="img\flags\._South Korea.png" />
+    <Content Include="img\flags\._Spain.png" />
+    <Content Include="img\flags\._Sri Lanka.png" />
+    <Content Include="img\flags\._St Kitts &amp; Nevis.png" />
+    <Content Include="img\flags\._St Vincent &amp; the Grenadines.png" />
+    <Content Include="img\flags\._Sudan.png" />
+    <Content Include="img\flags\._Suriname.png" />
+    <Content Include="img\flags\._Swaziland.png" />
+    <Content Include="img\flags\._Sweden.png" />
+    <Content Include="img\flags\._Switzerland.png" />
+    <Content Include="img\flags\._Syria.png" />
+    <Content Include="img\flags\._Tahiti%28French Polinesia%29.png" />
+    <Content Include="img\flags\._Taiwan.png" />
+    <Content Include="img\flags\._Tajikistan.png" />
+    <Content Include="img\flags\._Tanzania.png" />
+    <Content Include="img\flags\._Thailand.png" />
+    <Content Include="img\flags\._Timor-Leste.png" />
+    <Content Include="img\flags\._Togo.png" />
+    <Content Include="img\flags\._Tonga.png" />
+    <Content Include="img\flags\._Trinidad &amp; Tobago.png" />
+    <Content Include="img\flags\._Tunisia.png" />
+    <Content Include="img\flags\._Turkey.png" />
+    <Content Include="img\flags\._Turkmenistan.png" />
+    <Content Include="img\flags\._Turks and Caicos Islands.png" />
+    <Content Include="img\flags\._Tuvalu.png" />
+    <Content Include="img\flags\._Uganda.png" />
+    <Content Include="img\flags\._Ukraine.png" />
+    <Content Include="img\flags\._United Arab Emirates.png" />
+    <Content Include="img\flags\._United Kingdom%28Great Britain%29.png" />
+    <Content Include="img\flags\._United Nations.png" />
+    <Content Include="img\flags\._Uruguay.png" />
+    <Content Include="img\flags\._USA.png" />
+    <Content Include="img\flags\._Uzbekistan.png" />
+    <Content Include="img\flags\._Vanutau.png" />
+    <Content Include="img\flags\._Vatican City.png" />
+    <Content Include="img\flags\._Venezuela.png" />
+    <Content Include="img\flags\._Viet Nam.png" />
+    <Content Include="img\flags\._Virgin Islands British.png" />
+    <Content Include="img\flags\._Virgin Islands US.png" />
+    <Content Include="img\flags\._Wales.png" />
+    <Content Include="img\flags\._Western Sahara.png" />
+    <Content Include="img\flags\._Yemen.png" />
+    <Content Include="img\flags\._Zambia.png" />
+    <Content Include="img\flags\._Zimbabwe.png" />
+    <Content Include="img\flags\Afghanistan.png" />
+    <Content Include="img\flags\African Union.png" />
+    <Content Include="img\flags\Albania.png" />
+    <Content Include="img\flags\Algeria.png" />
+    <Content Include="img\flags\American Samoa.png" />
+    <Content Include="img\flags\Andorra.png" />
+    <Content Include="img\flags\Angola.png" />
+    <Content Include="img\flags\Anguilla.png" />
+    <Content Include="img\flags\Antarctica.png" />
+    <Content Include="img\flags\Antigua &amp; Barbuda.png" />
+    <Content Include="img\flags\Arab League.png" />
+    <Content Include="img\flags\Argentina.png" />
+    <Content Include="img\flags\Armenia.png" />
+    <Content Include="img\flags\Aruba.png" />
+    <Content Include="img\flags\ASEAN.png" />
+    <Content Include="img\flags\Australia.png" />
+    <Content Include="img\flags\Austria.png" />
+    <Content Include="img\flags\Azerbaijan.png" />
+    <Content Include="img\flags\Bahamas.png" />
+    <Content Include="img\flags\Bahrain.png" />
+    <Content Include="img\flags\Bangladesh.png" />
+    <Content Include="img\flags\Barbados.png" />
+    <Content Include="img\flags\Belarus.png" />
+    <Content Include="img\flags\Belgium.png" />
+    <Content Include="img\flags\Belize.png" />
+    <Content Include="img\flags\Benin.png" />
+    <Content Include="img\flags\Bermuda.png" />
+    <Content Include="img\flags\Bhutan.png" />
+    <Content Include="img\flags\Bolivia.png" />
+    <Content Include="img\flags\Bosnia &amp; Herzegovina.png" />
+    <Content Include="img\flags\Botswana.png" />
+    <Content Include="img\flags\Brazil.png" />
+    <Content Include="img\flags\Brunei.png" />
+    <Content Include="img\flags\Bulgaria.png" />
+    <Content Include="img\flags\Burkina Faso.png" />
+    <Content Include="img\flags\Burundi.png" />
+    <Content Include="img\flags\Cambodja.png" />
+    <Content Include="img\flags\Cameroon.png" />
+    <Content Include="img\flags\Canada.png" />
+    <Content Include="img\flags\Cape Verde.png" />
+    <Content Include="img\flags\CARICOM.png" />
+    <Content Include="img\flags\Cayman Islands.png" />
+    <Content Include="img\flags\Central African Republic.png" />
+    <Content Include="img\flags\Chad.png" />
+    <Content Include="img\flags\Chile.png" />
+    <Content Include="img\flags\China.png" />
+    <Content Include="img\flags\CIS.png" />
+    <Content Include="img\flags\Colombia.png" />
+    <Content Include="img\flags\Commonwealth.png" />
+    <Content Include="img\flags\Comoros.png" />
+    <Content Include="img\flags\Congo-Brazzaville.png" />
+    <Content Include="img\flags\Congo-Kinshasa%28Zaire%29.png" />
+    <Content Include="img\flags\Cook Islands.png" />
+    <Content Include="img\flags\Costa Rica.png" />
+    <Content Include="img\flags\Cote d%27Ivoire.png" />
+    <Content Include="img\flags\Croatia.png" />
+    <Content Include="img\flags\Cuba.png" />
+    <Content Include="img\flags\Cyprus.png" />
+    <Content Include="img\flags\Czech Republic.png" />
+    <Content Include="img\flags\Denmark.png" />
+    <Content Include="img\flags\Djibouti.png" />
+    <Content Include="img\flags\Dominica.png" />
+    <Content Include="img\flags\Dominican Republic.png" />
+    <Content Include="img\flags\Ecuador.png" />
+    <Content Include="img\flags\Egypt.png" />
+    <Content Include="img\flags\El Salvador.png" />
+    <Content Include="img\flags\England.png" />
+    <Content Include="img\flags\Equatorial Guinea.png" />
+    <Content Include="img\flags\Eritrea.png" />
+    <Content Include="img\flags\Estonia.png" />
+    <Content Include="img\flags\Ethiopia.png" />
+    <Content Include="img\flags\European Union.png" />
+    <Content Include="img\flags\Faroes.png" />
+    <Content Include="img\flags\Fiji.png" />
+    <Content Include="img\flags\Finland.png" />
+    <Content Include="img\flags\France.png" />
+    <Content Include="img\flags\Gabon.png" />
+    <Content Include="img\flags\Gambia.png" />
+    <Content Include="img\flags\Georgia.png" />
+    <Content Include="img\flags\Germany.png" />
+    <Content Include="img\flags\Ghana.png" />
+    <Content Include="img\flags\Gibraltar.png" />
+    <Content Include="img\flags\Greece.png" />
+    <Content Include="img\flags\Greenland.png" />
+    <Content Include="img\flags\Grenada.png" />
+    <Content Include="img\flags\Guadeloupe.png" />
+    <Content Include="img\flags\Guam.png" />
+    <Content Include="img\flags\Guatemala.png" />
+    <Content Include="img\flags\Guernsey.png" />
+    <Content Include="img\flags\Guinea-Bissau.png" />
+    <Content Include="img\flags\Guinea.png" />
+    <Content Include="img\flags\Guyana.png" />
+    <Content Include="img\flags\Haiti.png" />
+    <Content Include="img\flags\Honduras.png" />
+    <Content Include="img\flags\Hong Kong.png" />
+    <Content Include="img\flags\Hungary.png" />
+    <Content Include="img\flags\Iceland.png" />
+    <Content Include="img\flags\India.png" />
+    <Content Include="img\flags\Indonezia.png" />
+    <Content Include="img\flags\Iran.png" />
+    <Content Include="img\flags\Iraq.png" />
+    <Content Include="img\flags\Ireland.png" />
+    <Content Include="img\flags\Islamic Conference.png" />
+    <Content Include="img\flags\Isle of Man.png" />
+    <Content Include="img\flags\Israel.png" />
+    <Content Include="img\flags\Italy.png" />
+    <Content Include="img\flags\Jamaica.png" />
+    <Content Include="img\flags\Japan.png" />
+    <Content Include="img\flags\Jersey.png" />
+    <Content Include="img\flags\Jordan.png" />
+    <Content Include="img\flags\Kazakhstan.png" />
+    <Content Include="img\flags\Kenya.png" />
+    <Content Include="img\flags\Kiribati.png" />
+    <Content Include="img\flags\Kosovo.png" />
+    <Content Include="img\flags\Kuwait.png" />
+    <Content Include="img\flags\Kyrgyzstan.png" />
+    <Content Include="img\flags\Laos.png" />
+    <Content Include="img\flags\Latvia.png" />
+    <Content Include="img\flags\Lebanon.png" />
+    <Content Include="img\flags\Lesotho.png" />
+    <Content Include="img\flags\Liberia.png" />
+    <Content Include="img\flags\Libya.png" />
+    <Content Include="img\flags\Liechtenshein.png" />
+    <Content Include="img\flags\Lithuania.png" />
+    <Content Include="img\flags\Luxembourg.png" />
+    <Content Include="img\flags\Macao.png" />
+    <Content Include="img\flags\Macedonia.png" />
+    <Content Include="img\flags\Madagascar.png" />
+    <Content Include="img\flags\Malawi.png" />
+    <Content Include="img\flags\Malaysia.png" />
+    <Content Include="img\flags\Maldives.png" />
+    <Content Include="img\flags\Mali.png" />
+    <Content Include="img\flags\Malta.png" />
+    <Content Include="img\flags\Marshall Islands.png" />
+    <Content Include="img\flags\Martinique.png" />
+    <Content Include="img\flags\Mauritania.png" />
+    <Content Include="img\flags\Mauritius.png" />
+    <Content Include="img\flags\Mexico.png" />
+    <Content Include="img\flags\Micronesia.png" />
+    <Content Include="img\flags\Moldova.png" />
+    <Content Include="img\flags\Monaco.png" />
+    <Content Include="img\flags\Mongolia.png" />
+    <Content Include="img\flags\Montenegro.png" />
+    <Content Include="img\flags\Montserrat.png" />
+    <Content Include="img\flags\Morocco.png" />
+    <Content Include="img\flags\Mozambique.png" />
+    <Content Include="img\flags\Myanmar%28Burma%29.png" />
+    <Content Include="img\flags\Namibia.png" />
+    <Content Include="img\flags\NATO.png" />
+    <Content Include="img\flags\Nauru.png" />
+    <Content Include="img\flags\Nepal.png" />
+    <Content Include="img\flags\Netherlands Antilles.png" />
+    <Content Include="img\flags\Netherlands.png" />
+    <Content Include="img\flags\New Caledonia.png" />
+    <Content Include="img\flags\New Zealand.png" />
+    <Content Include="img\flags\Nicaragua.png" />
+    <Content Include="img\flags\Niger.png" />
+    <Content Include="img\flags\Nigeria.png" />
+    <Content Include="img\flags\North Korea.png" />
+    <Content Include="img\flags\Northern Cyprus.png" />
+    <Content Include="img\flags\Northern Ireland.png" />
+    <Content Include="img\flags\Norway.png" />
+    <Content Include="img\flags\Olimpic Movement.png" />
+    <Content Include="img\flags\Oman.png" />
+    <Content Include="img\flags\OPEC.png" />
+    <Content Include="img\flags\Pakistan.png" />
+    <Content Include="img\flags\Palau.png" />
+    <Content Include="img\flags\Palestine.png" />
+    <Content Include="img\flags\Panama.png" />
+    <Content Include="img\flags\Papua New Guinea.png" />
+    <Content Include="img\flags\Paraguay.png" />
+    <Content Include="img\flags\Peru.png" />
+    <Content Include="img\flags\Philippines.png" />
+    <Content Include="img\flags\Poland.png" />
+    <Content Include="img\flags\Portugal.png" />
+    <Content Include="img\flags\Puerto Rico.png" />
+    <Content Include="img\flags\Qatar.png" />
+    <Content Include="img\flags\Red Cross.png" />
+    <Content Include="img\flags\Reunion.png" />
+    <Content Include="img\flags\Romania.png" />
+    <Content Include="img\flags\Russian Federation.png" />
+    <Content Include="img\flags\Rwanda.png" />
+    <Content Include="img\flags\Saint Lucia.png" />
+    <Content Include="img\flags\Samoa.png" />
+    <Content Include="img\flags\San Marino.png" />
+    <Content Include="img\flags\Sao Tome &amp; Principe.png" />
+    <Content Include="img\flags\Saudi Arabia.png" />
+    <Content Include="img\flags\Scotland.png" />
+    <Content Include="img\flags\Senegal.png" />
+    <Content Include="img\flags\Serbia%28Yugoslavia%29.png" />
+    <Content Include="img\flags\Seychelles.png" />
+    <Content Include="img\flags\Sierra Leone.png" />
+    <Content Include="img\flags\Singapore.png" />
+    <Content Include="img\flags\Slovakia.png" />
+    <Content Include="img\flags\Slovenia.png" />
+    <Content Include="img\flags\Solomon Islands.png" />
+    <Content Include="img\flags\Somalia.png" />
+    <Content Include="img\flags\Somaliland.png" />
+    <Content Include="img\flags\South Africa.png" />
+    <Content Include="img\flags\South Korea.png" />
+    <Content Include="img\flags\Spain.png" />
+    <Content Include="img\flags\Sri Lanka.png" />
+    <Content Include="img\flags\St Kitts &amp; Nevis.png" />
+    <Content Include="img\flags\St Vincent &amp; the Grenadines.png" />
+    <Content Include="img\flags\Sudan.png" />
+    <Content Include="img\flags\Suriname.png" />
+    <Content Include="img\flags\Swaziland.png" />
+    <Content Include="img\flags\Sweden.png" />
+    <Content Include="img\flags\Switzerland.png" />
+    <Content Include="img\flags\Syria.png" />
+    <Content Include="img\flags\Tahiti%28French Polinesia%29.png" />
+    <Content Include="img\flags\Taiwan.png" />
+    <Content Include="img\flags\Tajikistan.png" />
+    <Content Include="img\flags\Tanzania.png" />
+    <Content Include="img\flags\Thailand.png" />
+    <Content Include="img\flags\Timor-Leste.png" />
+    <Content Include="img\flags\Togo.png" />
+    <Content Include="img\flags\Tonga.png" />
+    <Content Include="img\flags\Trinidad &amp; Tobago.png" />
+    <Content Include="img\flags\Tunisia.png" />
+    <Content Include="img\flags\Turkey.png" />
+    <Content Include="img\flags\Turkmenistan.png" />
+    <Content Include="img\flags\Turks and Caicos Islands.png" />
+    <Content Include="img\flags\Tuvalu.png" />
+    <Content Include="img\flags\Uganda.png" />
+    <Content Include="img\flags\Ukraine.png" />
+    <Content Include="img\flags\United Arab Emirates.png" />
+    <Content Include="img\flags\United Kingdom%28Great Britain%29.png" />
+    <Content Include="img\flags\United Nations.png" />
+    <Content Include="img\flags\Uruguay.png" />
+    <Content Include="img\flags\USA.png" />
+    <Content Include="img\flags\Uzbekistan.png" />
+    <Content Include="img\flags\Vanutau.png" />
+    <Content Include="img\flags\Vatican City.png" />
+    <Content Include="img\flags\Venezuela.png" />
+    <Content Include="img\flags\Viet Nam.png" />
+    <Content Include="img\flags\Virgin Islands British.png" />
+    <Content Include="img\flags\Virgin Islands US.png" />
+    <Content Include="img\flags\Wales.png" />
+    <Content Include="img\flags\Western Sahara.png" />
+    <Content Include="img\flags\Yemen.png" />
+    <Content Include="img\flags\Zambia.png" />
+    <Content Include="img\flags\Zimbabwe.png" />
+    <Content Include="img\flag_codes\._ARB.png" />
+    <Content Include="img\flag_codes\._ARG.png" />
+    <Content Include="img\flag_codes\._BR.png" />
+    <Content Include="img\flag_codes\._BUL.png" />
+    <Content Include="img\flag_codes\._CN.png" />
+    <Content Include="img\flag_codes\._CRO.png" />
+    <Content Include="img\flag_codes\._CZ.png" />
+    <Content Include="img\flag_codes\._DE.png" />
+    <Content Include="img\flag_codes\._DEN.png" />
+    <Content Include="img\flag_codes\._EST.png" />
+    <Content Include="img\flag_codes\._FIN.png" />
+    <Content Include="img\flag_codes\._FR.png" />
+    <Content Include="img\flag_codes\._GR.png" />
+    <Content Include="img\flag_codes\._HUN.png" />
+    <Content Include="img\flag_codes\._ICE.png" />
+    <Content Include="img\flag_codes\._IND.png" />
+    <Content Include="img\flag_codes\._ISR.png" />
+    <Content Include="img\flag_codes\._IT.png" />
+    <Content Include="img\flag_codes\._JP.png" />
+    <Content Include="img\flag_codes\._KOR.png" />
+    <Content Include="img\flag_codes\._LAT.png" />
+    <Content Include="img\flag_codes\._LIT.png" />
+    <Content Include="img\flag_codes\._MAL.png" />
+    <Content Include="img\flag_codes\._NAM.png" />
+    <Content Include="img\flag_codes\._NED.png" />
+    <Content Include="img\flag_codes\._NR.png" />
+    <Content Include="img\flag_codes\._PHI.png" />
+    <Content Include="img\flag_codes\._PL.png" />
+    <Content Include="img\flag_codes\._PT.png" />
+    <Content Include="img\flag_codes\._ROM.png" />
+    <Content Include="img\flag_codes\._RU.png" />
+    <Content Include="img\flag_codes\._SERB.png" />
+    <Content Include="img\flag_codes\._SLO.png" />
+    <Content Include="img\flag_codes\._SLOVE.png" />
+    <Content Include="img\flag_codes\._SP.png" />
+    <Content Include="img\flag_codes\._SW.png" />
+    <Content Include="img\flag_codes\._TAI.png" />
+    <Content Include="img\flag_codes\._TUR.png" />
+    <Content Include="img\flag_codes\._UK.png" />
+    <Content Include="img\flag_codes\._UKR.png" />
+    <Content Include="img\flag_codes\._US.png" />
+    <Content Include="img\flag_codes\ARB.png" />
+    <Content Include="img\flag_codes\ARG.png" />
+    <Content Include="img\flag_codes\BR.png" />
+    <Content Include="img\flag_codes\BUL.png" />
+    <Content Include="img\flag_codes\CN.png" />
+    <Content Include="img\flag_codes\CRO.png" />
+    <Content Include="img\flag_codes\CZ.png" />
+    <Content Include="img\flag_codes\DE.png" />
+    <Content Include="img\flag_codes\DEN.png" />
+    <Content Include="img\flag_codes\EST.png" />
+    <Content Include="img\flag_codes\FIN.png" />
+    <Content Include="img\flag_codes\FR.png" />
+    <Content Include="img\flag_codes\GR.png" />
+    <Content Include="img\flag_codes\HUN.png" />
+    <Content Include="img\flag_codes\ICE.png" />
+    <Content Include="img\flag_codes\IND.png" />
+    <Content Include="img\flag_codes\ISR.png" />
+    <Content Include="img\flag_codes\IT.png" />
+    <Content Include="img\flag_codes\JP.png" />
+    <Content Include="img\flag_codes\KOR.png" />
+    <Content Include="img\flag_codes\LAT.png" />
+    <Content Include="img\flag_codes\LIT.png" />
+    <Content Include="img\flag_codes\MAL.png" />
+    <Content Include="img\flag_codes\NAM.png" />
+    <Content Include="img\flag_codes\NED.png" />
+    <Content Include="img\flag_codes\NR.png" />
+    <Content Include="img\flag_codes\PHI.png" />
+    <Content Include="img\flag_codes\PL.png" />
+    <Content Include="img\flag_codes\PT.png" />
+    <Content Include="img\flag_codes\ROM.png" />
+    <Content Include="img\flag_codes\RU.png" />
+    <Content Include="img\flag_codes\SERB.png" />
+    <Content Include="img\flag_codes\SLO.png" />
+    <Content Include="img\flag_codes\SLOVE.png" />
+    <Content Include="img\flag_codes\SP.png" />
+    <Content Include="img\flag_codes\SW.png" />
+    <Content Include="img\flag_codes\TAI.png" />
+    <Content Include="img\flag_codes\TUR.png" />
+    <Content Include="img\flag_codes\UK.png" />
+    <Content Include="img\flag_codes\UKR.png" />
+    <Content Include="img\flag_codes\US.png" />
+    <Content Include="img\footer\._footer_subscribe_bg.png" />
+    <Content Include="img\footer\footer_subscribe_bg.png" />
+    <Content Include="img\logo-1.png" />
+    <Content Include="img\logo-black.png" />
+    <Content Include="img\logo-dark.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\map-marker.png" />
+    <Content Include="img\map-view.png" />
+    <Content Include="img\mockups\._phone-1.png" />
+    <Content Include="img\mockups\._phone-2.png" />
+    <Content Include="img\mockups\phone-1.png" />
+    <Content Include="img\mockups\phone-2.png" />
+    <Content Include="img\patterns\._ep_naturalblack.png" />
+    <Content Include="img\patterns\._escape-flight.png" />
+    <Content Include="img\patterns\._swirl_pattern.png" />
+    <Content Include="img\patterns\._test.png" />
+    <Content Include="img\patterns\._travel-1.png" />
+    <Content Include="img\patterns\._travel-2.png" />
+    <Content Include="img\patterns\._travel-3.png" />
+    <Content Include="img\patterns\._travel-4.png" />
+    <Content Include="img\patterns\._travel-patter-3.png" />
+    <Content Include="img\patterns\ep_naturalblack.png" />
+    <Content Include="img\patterns\escape-flight.png" />
+    <Content Include="img\patterns\swirl_pattern.png" />
+    <Content Include="img\patterns\test.png" />
+    <Content Include="img\patterns\travel-1.png" />
+    <Content Include="img\patterns\travel-2.png" />
+    <Content Include="img\patterns\travel-3.png" />
+    <Content Include="img\patterns\travel-4.png" />
+    <Content Include="img\patterns\travel-patter-3.png" />
+    <Content Include="img\patterns\travel\._1.png" />
+    <Content Include="img\patterns\travel\._2.png" />
+    <Content Include="img\patterns\travel\._3.png" />
+    <Content Include="img\patterns\travel\._4.png" />
+    <Content Include="img\patterns\travel\._5.png" />
+    <Content Include="img\patterns\travel\._6.png" />
+    <Content Include="img\patterns\travel\1.png" />
+    <Content Include="img\patterns\travel\2.png" />
+    <Content Include="img\patterns\travel\3.png" />
+    <Content Include="img\patterns\travel\4.png" />
+    <Content Include="img\patterns\travel\5.png" />
+    <Content Include="img\patterns\travel\6.png" />
+    <Content Include="img\payment-icons\._2checkout-curved-128px.png" />
+    <Content Include="img\payment-icons\._2checkout-curved-32px.png" />
+    <Content Include="img\payment-icons\._2checkout-curved-64px.png" />
+    <Content Include="img\payment-icons\._2checkout-straight-128px.png" />
+    <Content Include="img\payment-icons\._2checkout-straight-32px.png" />
+    <Content Include="img\payment-icons\._2checkout-straight-64px.png" />
+    <Content Include="img\payment-icons\._american-express-curved-128px.png" />
+    <Content Include="img\payment-icons\._american-express-curved-32px.png" />
+    <Content Include="img\payment-icons\._american-express-curved-64px.png" />
+    <Content Include="img\payment-icons\._american-express-straight-128px.png" />
+    <Content Include="img\payment-icons\._american-express-straight-32px.png" />
+    <Content Include="img\payment-icons\._american-express-straight-64px.png" />
+    <Content Include="img\payment-icons\._cirrus-curved-128px.png" />
+    <Content Include="img\payment-icons\._cirrus-curved-32px.png" />
+    <Content Include="img\payment-icons\._cirrus-curved-64px.png" />
+    <Content Include="img\payment-icons\._cirrus-straight-128px.png" />
+    <Content Include="img\payment-icons\._cirrus-straight-32px.png" />
+    <Content Include="img\payment-icons\._cirrus-straight-64px.png" />
+    <Content Include="img\payment-icons\._delta-curved-128px.png" />
+    <Content Include="img\payment-icons\._delta-curved-32px.png" />
+    <Content Include="img\payment-icons\._delta-curved-64px.png" />
+    <Content Include="img\payment-icons\._delta-straight-128px.png" />
+    <Content Include="img\payment-icons\._delta-straight-32px.png" />
+    <Content Include="img\payment-icons\._delta-straight-64px.png" />
+    <Content Include="img\payment-icons\._direct-debit-curved-128px.png" />
+    <Content Include="img\payment-icons\._direct-debit-curved-32px.png" />
+    <Content Include="img\payment-icons\._direct-debit-curved-64px.png" />
+    <Content Include="img\payment-icons\._direct-debit-straight-128px.png" />
+    <Content Include="img\payment-icons\._direct-debit-straight-32px.png" />
+    <Content Include="img\payment-icons\._direct-debit-straight-64px.png" />
+    <Content Include="img\payment-icons\._discover-curved-128px.png" />
+    <Content Include="img\payment-icons\._discover-curved-32px.png" />
+    <Content Include="img\payment-icons\._discover-curved-64px.png" />
+    <Content Include="img\payment-icons\._discover-straight-128px.png" />
+    <Content Include="img\payment-icons\._discover-straight-32px.png" />
+    <Content Include="img\payment-icons\._discover-straight-64px.png" />
+    <Content Include="img\payment-icons\._ebay-curved-128px.png" />
+    <Content Include="img\payment-icons\._ebay-curved-32px.png" />
+    <Content Include="img\payment-icons\._ebay-curved-64px.png" />
+    <Content Include="img\payment-icons\._ebay-straight-128px.png" />
+    <Content Include="img\payment-icons\._ebay-straight-32px.png" />
+    <Content Include="img\payment-icons\._ebay-straight-64px.png" />
+    <Content Include="img\payment-icons\._google-checkout-curved-128px.png" />
+    <Content Include="img\payment-icons\._google-checkout-curved-32px.png" />
+    <Content Include="img\payment-icons\._google-checkout-curved-64px.png" />
+    <Content Include="img\payment-icons\._google-checkout-straight-128px.png" />
+    <Content Include="img\payment-icons\._google-checkout-straight-32px.png" />
+    <Content Include="img\payment-icons\._google-checkout-straight-64px.png" />
+    <Content Include="img\payment-icons\._maestro-curved-128px.png" />
+    <Content Include="img\payment-icons\._maestro-curved-32px.png" />
+    <Content Include="img\payment-icons\._maestro-curved-64px.png" />
+    <Content Include="img\payment-icons\._maestro-straight-128px.png" />
+    <Content Include="img\payment-icons\._maestro-straight-32px.png" />
+    <Content Include="img\payment-icons\._maestro-straight-64px.png" />
+    <Content Include="img\payment-icons\._mastercard-curved-128px.png" />
+    <Content Include="img\payment-icons\._mastercard-curved-32px.png" />
+    <Content Include="img\payment-icons\._mastercard-curved-64px.png" />
+    <Content Include="img\payment-icons\._mastercard-straight-128px.png" />
+    <Content Include="img\payment-icons\._mastercard-straight-32px.png" />
+    <Content Include="img\payment-icons\._mastercard-straight-64px.png" />
+    <Content Include="img\payment-icons\._moneybookers-curved-128px.png" />
+    <Content Include="img\payment-icons\._moneybookers-curved-32px.png" />
+    <Content Include="img\payment-icons\._moneybookers-curved-64px.png" />
+    <Content Include="img\payment-icons\._moneybookers-straight-128px.png" />
+    <Content Include="img\payment-icons\._moneybookers-straight-32px.png" />
+    <Content Include="img\payment-icons\._moneybookers-straight-64px.png" />
+    <Content Include="img\payment-icons\._paypal-curved-128px.png" />
+    <Content Include="img\payment-icons\._paypal-curved-32px.png" />
+    <Content Include="img\payment-icons\._paypal-curved-64px.png" />
+    <Content Include="img\payment-icons\._paypal-straight-128px.png" />
+    <Content Include="img\payment-icons\._paypal-straight-32px.png" />
+    <Content Include="img\payment-icons\._paypal-straight-64px.png" />
+    <Content Include="img\payment-icons\._sagepay-curved-128px.png" />
+    <Content Include="img\payment-icons\._sagepay-curved-32px.png" />
+    <Content Include="img\payment-icons\._sagepay-curved-64px.png" />
+    <Content Include="img\payment-icons\._sagepay-straight-128px.png" />
+    <Content Include="img\payment-icons\._sagepay-straight-32px.png" />
+    <Content Include="img\payment-icons\._sagepay-straight-64px.png" />
+    <Content Include="img\payment-icons\._solo-curved-128px.png" />
+    <Content Include="img\payment-icons\._solo-curved-32px.png" />
+    <Content Include="img\payment-icons\._solo-curved-64px.png" />
+    <Content Include="img\payment-icons\._solo-straight-128px.png" />
+    <Content Include="img\payment-icons\._solo-straight-32px.png" />
+    <Content Include="img\payment-icons\._solo-straight-64px.png" />
+    <Content Include="img\payment-icons\._switch-curved-128px.png" />
+    <Content Include="img\payment-icons\._switch-curved-32px.png" />
+    <Content Include="img\payment-icons\._switch-curved-64px.png" />
+    <Content Include="img\payment-icons\._switch-straight-128px.png" />
+    <Content Include="img\payment-icons\._switch-straight-32px.png" />
+    <Content Include="img\payment-icons\._switch-straight-64px.png" />
+    <Content Include="img\payment-icons\._visa-curved-128px.png" />
+    <Content Include="img\payment-icons\._visa-curved-32px.png" />
+    <Content Include="img\payment-icons\._visa-curved-64px.png" />
+    <Content Include="img\payment-icons\._visa-electron-curved-128px.png" />
+    <Content Include="img\payment-icons\._visa-electron-curved-32px.png" />
+    <Content Include="img\payment-icons\._visa-electron-curved-64px.png" />
+    <Content Include="img\payment-icons\._visa-electron-straight-128px.png" />
+    <Content Include="img\payment-icons\._visa-electron-straight-32px.png" />
+    <Content Include="img\payment-icons\._visa-electron-straight-64px.png" />
+    <Content Include="img\payment-icons\._visa-straight-128px.png" />
+    <Content Include="img\payment-icons\._visa-straight-32px.png" />
+    <Content Include="img\payment-icons\._visa-straight-64px.png" />
+    <Content Include="img\payment-icons\._western-union-curved-128px.png" />
+    <Content Include="img\payment-icons\._western-union-curved-32px.png" />
+    <Content Include="img\payment-icons\._western-union-curved-64px.png" />
+    <Content Include="img\payment-icons\._western-union-straight-128px.png" />
+    <Content Include="img\payment-icons\._western-union-straight-32px.png" />
+    <Content Include="img\payment-icons\._western-union-straight-64px.png" />
+    <Content Include="img\payment-icons\2checkout-curved-128px.png" />
+    <Content Include="img\payment-icons\2checkout-curved-32px.png" />
+    <Content Include="img\payment-icons\2checkout-curved-64px.png" />
+    <Content Include="img\payment-icons\2checkout-straight-128px.png" />
+    <Content Include="img\payment-icons\2checkout-straight-32px.png" />
+    <Content Include="img\payment-icons\2checkout-straight-64px.png" />
+    <Content Include="img\payment-icons\american-express-curved-128px.png" />
+    <Content Include="img\payment-icons\american-express-curved-32px.png" />
+    <Content Include="img\payment-icons\american-express-curved-64px.png" />
+    <Content Include="img\payment-icons\american-express-straight-128px.png" />
+    <Content Include="img\payment-icons\american-express-straight-32px.png" />
+    <Content Include="img\payment-icons\american-express-straight-64px.png" />
+    <Content Include="img\payment-icons\cirrus-curved-128px.png" />
+    <Content Include="img\payment-icons\cirrus-curved-32px.png" />
+    <Content Include="img\payment-icons\cirrus-curved-64px.png" />
+    <Content Include="img\payment-icons\cirrus-straight-128px.png" />
+    <Content Include="img\payment-icons\cirrus-straight-32px.png" />
+    <Content Include="img\payment-icons\cirrus-straight-64px.png" />
+    <Content Include="img\payment-icons\delta-curved-128px.png" />
+    <Content Include="img\payment-icons\delta-curved-32px.png" />
+    <Content Include="img\payment-icons\delta-curved-64px.png" />
+    <Content Include="img\payment-icons\delta-straight-128px.png" />
+    <Content Include="img\payment-icons\delta-straight-32px.png" />
+    <Content Include="img\payment-icons\delta-straight-64px.png" />
+    <Content Include="img\payment-icons\direct-debit-curved-128px.png" />
+    <Content Include="img\payment-icons\direct-debit-curved-32px.png" />
+    <Content Include="img\payment-icons\direct-debit-curved-64px.png" />
+    <Content Include="img\payment-icons\direct-debit-straight-128px.png" />
+    <Content Include="img\payment-icons\direct-debit-straight-32px.png" />
+    <Content Include="img\payment-icons\direct-debit-straight-64px.png" />
+    <Content Include="img\payment-icons\discover-curved-128px.png" />
+    <Content Include="img\payment-icons\discover-curved-32px.png" />
+    <Content Include="img\payment-icons\discover-curved-64px.png" />
+    <Content Include="img\payment-icons\discover-straight-128px.png" />
+    <Content Include="img\payment-icons\discover-straight-32px.png" />
+    <Content Include="img\payment-icons\discover-straight-64px.png" />
+    <Content Include="img\payment-icons\ebay-curved-128px.png" />
+    <Content Include="img\payment-icons\ebay-curved-32px.png" />
+    <Content Include="img\payment-icons\ebay-curved-64px.png" />
+    <Content Include="img\payment-icons\ebay-straight-128px.png" />
+    <Content Include="img\payment-icons\ebay-straight-32px.png" />
+    <Content Include="img\payment-icons\ebay-straight-64px.png" />
+    <Content Include="img\payment-icons\google-checkout-curved-128px.png" />
+    <Content Include="img\payment-icons\google-checkout-curved-32px.png" />
+    <Content Include="img\payment-icons\google-checkout-curved-64px.png" />
+    <Content Include="img\payment-icons\google-checkout-straight-128px.png" />
+    <Content Include="img\payment-icons\google-checkout-straight-32px.png" />
+    <Content Include="img\payment-icons\google-checkout-straight-64px.png" />
+    <Content Include="img\payment-icons\maestro-curved-128px.png" />
+    <Content Include="img\payment-icons\maestro-curved-32px.png" />
+    <Content Include="img\payment-icons\maestro-curved-64px.png" />
+    <Content Include="img\payment-icons\maestro-straight-128px.png" />
+    <Content Include="img\payment-icons\maestro-straight-32px.png" />
+    <Content Include="img\payment-icons\maestro-straight-64px.png" />
+    <Content Include="img\payment-icons\mastercard-curved-128px.png" />
+    <Content Include="img\payment-icons\mastercard-curved-32px.png" />
+    <Content Include="img\payment-icons\mastercard-curved-64px.png" />
+    <Content Include="img\payment-icons\mastercard-straight-128px.png" />
+    <Content Include="img\payment-icons\mastercard-straight-32px.png" />
+    <Content Include="img\payment-icons\mastercard-straight-64px.png" />
+    <Content Include="img\payment-icons\moneybookers-curved-128px.png" />
+    <Content Include="img\payment-icons\moneybookers-curved-32px.png" />
+    <Content Include="img\payment-icons\moneybookers-curved-64px.png" />
+    <Content Include="img\payment-icons\moneybookers-straight-128px.png" />
+    <Content Include="img\payment-icons\moneybookers-straight-32px.png" />
+    <Content Include="img\payment-icons\moneybookers-straight-64px.png" />
+    <Content Include="img\payment-icons\paypal-curved-128px.png" />
+    <Content Include="img\payment-icons\paypal-curved-32px.png" />
+    <Content Include="img\payment-icons\paypal-curved-64px.png" />
+    <Content Include="img\payment-icons\paypal-straight-128px.png" />
+    <Content Include="img\payment-icons\paypal-straight-32px.png" />
+    <Content Include="img\payment-icons\paypal-straight-64px.png" />
+    <Content Include="img\payment-icons\sagepay-curved-128px.png" />
+    <Content Include="img\payment-icons\sagepay-curved-32px.png" />
+    <Content Include="img\payment-icons\sagepay-curved-64px.png" />
+    <Content Include="img\payment-icons\sagepay-straight-128px.png" />
+    <Content Include="img\payment-icons\sagepay-straight-32px.png" />
+    <Content Include="img\payment-icons\sagepay-straight-64px.png" />
+    <Content Include="img\payment-icons\solo-curved-128px.png" />
+    <Content Include="img\payment-icons\solo-curved-32px.png" />
+    <Content Include="img\payment-icons\solo-curved-64px.png" />
+    <Content Include="img\payment-icons\solo-straight-128px.png" />
+    <Content Include="img\payment-icons\solo-straight-32px.png" />
+    <Content Include="img\payment-icons\solo-straight-64px.png" />
+    <Content Include="img\payment-icons\switch-curved-128px.png" />
+    <Content Include="img\payment-icons\switch-curved-32px.png" />
+    <Content Include="img\payment-icons\switch-curved-64px.png" />
+    <Content Include="img\payment-icons\switch-straight-128px.png" />
+    <Content Include="img\payment-icons\switch-straight-32px.png" />
+    <Content Include="img\payment-icons\switch-straight-64px.png" />
+    <Content Include="img\payment-icons\visa-curved-128px.png" />
+    <Content Include="img\payment-icons\visa-curved-32px.png" />
+    <Content Include="img\payment-icons\visa-curved-64px.png" />
+    <Content Include="img\payment-icons\visa-electron-curved-128px.png" />
+    <Content Include="img\payment-icons\visa-electron-curved-32px.png" />
+    <Content Include="img\payment-icons\visa-electron-curved-64px.png" />
+    <Content Include="img\payment-icons\visa-electron-straight-128px.png" />
+    <Content Include="img\payment-icons\visa-electron-straight-32px.png" />
+    <Content Include="img\payment-icons\visa-electron-straight-64px.png" />
+    <Content Include="img\payment-icons\visa-straight-128px.png" />
+    <Content Include="img\payment-icons\visa-straight-32px.png" />
+    <Content Include="img\payment-icons\visa-straight-64px.png" />
+    <Content Include="img\payment-icons\western-union-curved-128px.png" />
+    <Content Include="img\payment-icons\western-union-curved-32px.png" />
+    <Content Include="img\payment-icons\western-union-curved-64px.png" />
+    <Content Include="img\payment-icons\western-union-straight-128px.png" />
+    <Content Include="img\payment-icons\western-union-straight-32px.png" />
+    <Content Include="img\payment-icons\western-union-straight-64px.png" />
+    <Content Include="Scripts\ajaxCalls.js" />
+    <Content Include="Scripts\blur-area.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\Simple-Line-Icons.eot" />
+    <Content Include="fonts\Simple-Line-Icons.ttf" />
+    <Content Include="fonts\Simple-Line-Icons.woff" />
+    <Content Include="fonts\Simple-Line-Icons.woff2" />
+    <Content Include="fonts\weathericons-regular-webfont.eot" />
+    <Content Include="fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="fonts\weathericons-regular-webfont.woff" />
+    <Content Include="fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="img\footer\.DS_Store" />
+    <Content Include="img\footer\._.DS_Store" />
+    <Content Include="img\patterns\.DS_Store" />
+    <Content Include="img\patterns\._.DS_Store" />
+    <Content Include="img\patterns\._travel" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Views\Home\index.cshtml" />
+    <Content Include="Scripts\bs-datepicker.js" />
+    <Content Include="Scripts\countdown.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\fitvid.js" />
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Scripts\fotorama.js" />
+    <Content Include="Scripts\gmap.js" />
+    <Content Include="Scripts\icheck.js" />
+    <Content Include="Scripts\ion-range-slider.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\magnific-popup.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\owl-carousel.js" />
+    <Content Include="Scripts\quantity-selector.js" />
+    <Content Include="Scripts\smooth-scroll.js" />
+    <Content Include="Scripts\sticky-kit.js" />
+    <Content Include="Scripts\typeahead.js" />
+    <Content Include="Scripts\window-scroll-action.js" />
+    <Content Include="Scripts\youtube-bg.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="Views\Home\SearchFlight.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54342</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
