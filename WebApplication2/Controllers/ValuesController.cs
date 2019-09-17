@@ -30,6 +30,8 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public IHttpActionResult SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
         {
+            List<FlightResult> flightResultList = new List<FlightResult>();
+
             var departurCity = searchFlightDetailsObject.Departure;
             var arrivalCity = searchFlightDetailsObject.Arrival;
             var arrivalCityCode = string.Empty;
@@ -61,22 +63,59 @@ namespace WebApplication2.Controllers
             var resultItineraries = deserializedSearchFlightList.body.data.itineraries;
             foreach (var itinerary in resultItineraries)
             {
-                var originDestRefNumber = itinerary.origin_destinations[0].ref_number;
-                var originDestDirectionId = itinerary.origin_destinations[0].direction_id;
-                var originDestElapsedTime = itinerary.origin_destinations[0].elapsed_time;
-                var originDestSegmentList = itinerary.origin_destinations[0].segments;
-                var originDestOptionPricingInfo = itinerary.origin_destinations[0].option_pricing_info;
+                var flightResult = new FlightResult();
 
-                var validatingAirlineCode = itinerary.validating_airline_code;
-                var combinationId = itinerary.combination_id;
-                var sequenceNumber = itinerary.sequence_number;
-                var cabinInfo = itinerary.cabin;
+                foreach (var originDestination in itinerary.origin_destinations)
+                {
+                    //Elapsed Time
+                    flightResult.ElapsedTime = Convert.ToString(originDestination.elapsed_time);
 
-                var pricingProvider = itinerary.pricing.provider;
-                var pricingPortalFare = itinerary.pricing.portal_fare;
+                    //Flight segments
+                    foreach (var segment in originDestination.segments)
+                    {
+                        flightResult.FlightSegmentList.Add(new FlightSegment
+                        {
+                            DepartureDate = Convert.ToString(segment.departure.date),
+                            DepartureTime = Convert.ToString(segment.departure.time),
+                            DepartureAirport = Convert.ToString(segment.departure.airport.name),
+                            DepartureTerminal = Convert.ToString(segment.departure.airport.terminal),
+                            ArrivalDate = Convert.ToString(segment.arrival.date),
+                            ArrivalTime = Convert.ToString(segment.arrival.time),
+                            ArrivalAirport = Convert.ToString(segment.arrival.airport.name),
+                            ArrivalTerminal = Convert.ToString(segment.arrival.airport.terminal),
+                            FlightNumber = Convert.ToString(segment.flight_number),
+                            FlightDuration = Convert.ToString(segment.flight_duration),
+                            OperatingAirline = Convert.ToString(segment.operating_airline.name),
+                            MarketingAirline = Convert.ToString(segment.marketing_airline.name),
+                            BaggageAllowance = Convert.ToString(segment.baggage[0].baggage.quantity) + Convert.ToString(segment.baggage[0].baggage.unit)
+                        });
+                    }
+
+                    //Cabin - Economy, Business, First Class etc
+                    flightResult.Cabin = Convert.ToString(itinerary.cabin.name);
+                    //Currency
+                    flightResult.PriceCurrency = Convert.ToString(itinerary.pricing.provider.currency.code);
+                    //Base Fare
+                    flightResult.BaseFarePrice = Convert.ToString(itinerary.pricing.provider.base_fare);
+                    //Total Fare
+                    flightResult.TotalFarePrice = Convert.ToString(itinerary.pricing.provider.total_fare);
+
+                    foreach (var fareBreakDownItem in itinerary.pricing.provider.fare_break_down)
+                    {
+                        flightResult.FlightPriceList.Add(new FlightPrice
+                        {
+                            PassengerCode = Convert.ToString(fareBreakDownItem.passenger.code),
+                            PassengerQty = Convert.ToString(fareBreakDownItem.passenger.quantity),
+                            TotalPassengerFarePrice = Convert.ToString(fareBreakDownItem.provider_fare.total),
+                            PassengerFareTax = Convert.ToString(fareBreakDownItem.provider_fare.taxes[0]),
+                        });
+                    }
+                }
+
+                flightResultList.Add(flightResult);
             }
 
-            return Json(searchFlightsResult);
+            return Json(flightResultList); //flightResultList contains extracted flight info
         }
 
         // PUT api/values/5

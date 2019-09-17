@@ -134,9 +134,6 @@ namespace WebApplication2.Models
                     throw ex;
                 }
             }
-
-            //System.Diagnostics.Debug.WriteLine(jsonResponse);               
-
         }
 
     }
