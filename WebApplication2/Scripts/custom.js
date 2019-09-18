@@ -62,7 +62,10 @@ function YouTubeVideo() {
             videoScroll();
         });
 
-        function videoScroll() {
+       
+    }
+}
+ function videoScroll() {
             var fraction = 0.75,
                 player = $video.data('ytPlayer').player,
                 videoHeight = $video.height(),
@@ -74,9 +77,7 @@ function YouTubeVideo() {
             } else {
                 player.playVideo();
             }
-        }
-    }
-}
+};
 
 function OwlCarousel() {
     $('.owl-carousel').each( function() {
@@ -272,12 +273,12 @@ function BSTabsActions() {
 function datePickers() {
 
     $('.datePickerSingle').datetimepicker({
-        format: 'ddd, MMM D'
+        format: 'DD/MM/YYYY'
     });
 
 
     $('.datePickerStart').datetimepicker({
-        format: 'ddd M/D'
+        format: 'DD/MM/YYYY'
     }).on('dp.change', function(e){
         var parent = $($(this).parents('.row')[0]),
             endDate = parent.find('.datePickerEnd');
@@ -285,7 +286,7 @@ function datePickers() {
     });
 
     $('.datePickerEnd').datetimepicker({
-        format: 'ddd M/D',
+        format: 'DD/MM/YYYY',
         useCurrent: false
     }).on('dp.change', function(e){
         var parent = $($(this).parents('.row')[0]),
@@ -373,14 +374,14 @@ function comingSoonCountdown() {
     });
 }
 
-$('.mobile-picker').each(function(i, item){
-    if(!isSafari) {
+$('.mobile-picker').each(function (i, item) {
+    if (!isSafari) {
         $(item).attr('type', 'text');
         $(item).val($(item).attr('value'));
-        $(item).on('focus', function(){
+        $(item).on('focus', function () {
             $(item).attr('type', 'date');
         });
-        $(item).on('blur', function(){
+        $(item).on('blur', function () {
             $(item).attr('type', 'text');
         });
     }

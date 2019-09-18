@@ -45,13 +45,13 @@ namespace WebApplication2.Controllers
 
             searchFlightDetailsObject.Departure = departureCityCode;
             searchFlightDetailsObject.Arrival = arrivalCityCode;
-            searchFlightDetailsObject.DepartureDate = Convert.ToDateTime(searchFlightDetailsObject.DepartureDate).ToString("MM/dd/yyyy");
+           // searchFlightDetailsObject.DepartureDate = Convert.ToDateTime(searchFlightDetailsObject.DepartureDate).ToString("MM/dd/yyyy");
 
             //Get searchFlightJsonObject
             string searchFlightJsonObject =
                 RunAPI.FormatFlightSearchJsonObject(searchFlightDetailsObject.Departure,
                                                     searchFlightDetailsObject.Arrival,
-                                                    "12/26/2019",
+                                                    searchFlightDetailsObject.DepartureDate,
                                                     numberOfAdult: Convert.ToInt32(searchFlightDetailsObject.TotalAdults),
                                                     numberOfChild: Convert.ToInt32(searchFlightDetailsObject.TotalChildren));
 

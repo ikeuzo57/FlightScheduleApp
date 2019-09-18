@@ -26,80 +26,116 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-7 col-xl-6 p-0 px-lg-3">
+                    <form>
 
-                    <div id="SearchAreaTabs-3">
-                        <div class="theme-search-area theme-search-area-stacked">
-                            <div class="theme-search-area-form">
-                                <div>
-                                    <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
-                                        <label class="btn btn-primary active">
-                                            <input type="radio" name="flight-options" id="flight-option-1"  onchange="handleClick(this)" value="RoundTrip" checked>Round Trip
-                                        </label>
-                                        <label class="btn btn-primary ">
-                                            <input type="radio" name="flight-options" id="flight-option-2" onchange="handleClick(this)" value="OneWay">One Way
-                                        </label>
+
+                        <div id="SearchAreaTabs-3">
+                            <div class="theme-search-area theme-search-area-stacked">
+                                <div class="theme-search-area-form">
+                                    <div class="form-group">
+                                        <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" name="flight-options" id="flight-option-1" onchange="handleClick(this)" value="RoundTrip" checked>Round Trip
+                                            </label>
+                                            <label class="btn btn-primary ">
+                                                <input type="radio" name="flight-options" id="flight-option-2" onchange="handleClick(this)" value="OneWay">One Way
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="row" data-gutter="none">
-                                    <div class="col-md-12 ">
-                                        <div class="row" data-gutter="none">
-                                            <div class="col-md-6 ">
-                                                <div class="theme-search-area-section first theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-no-border theme-search-area-section-mr">
-                                                    <div class="theme-search-area-section-inner">
-                                                        <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                                                        <input id="departurePlace" class="theme-search-area-section-input typeahead" type="text" placeholder="Departure" data-provide="typeahead">
+                                    <div class="row" data-gutter="none">
+                                        <div class="col-md-12 ">
+                                            <div class="row" data-gutter="none">
+                                                <div class="col-md-5 ">                                                
+                                                    <div class="form-group ">
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                            </div>
+                                                            <input id="departurePlace" class="form-control theme-search-area-section-input typeahead" type="text" placeholder="Departure" data-provide="typeahead">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-no-border theme-search-area-section-mr">
-                                                    <div class="theme-search-area-section-inner">
-                                                        <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                                                        <input id="arrivalPlace" class="theme-search-area-section-input typeahead" type="text" placeholder="Arrival" data-provide="typeahead">
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-5 ">
+                                                     
+                                                    <div class="form-group ">
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                            </div>
+                                                            <input id="arrivalPlace" class="form-control theme-search-area-section-input typeahead" type="text" placeholder="Arrival" data-provide="typeahead">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12" >
-                                        <div class="row" data-gutter="none">
-                                            <div class="col-md-6 ">
-                                                <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-no-border theme-search-area-section-mr">
-                                                    <div class="theme-search-area-section-inner">
-                                                        <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                                                        <input class="theme-search-area-section-input datePickerStart _mob-h" value="Wed 06/27" type="text" placeholder="Check-in">
-                                                        <input id="departureDate" class="theme-search-area-section-input _desk-h mobile-picker" value="2018-06-27" type="text">
+                                        <div class="col-md-12">
+                                            <div class='col-md-5'>
+                                                <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker6'>
+                                                        <input type='text' class="form-control"  id="departureDate" placeholder="24/02/2018"/>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6"  id="arrivaDateVisibility">
-                                                <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-no-border theme-search-area-section-mr">
-                                                    <div class="theme-search-area-section-inner">
-                                                        <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                                                        <input class="theme-search-area-section-input datePickerEnd _mob-h" value="Mon 07/02" type="text" placeholder="Check-out">
-                                                        <input id="arrivalDate" class="theme-search-area-section-input _desk-h mobile-picker" value="2018-07-02" type="text">
+                                            <div class="col-md-1"></div>
+
+                                            <div class='col-md-5' id="arrivaDateVisibility">
+                                                <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker7'>
+                                                        <input type='text' class="form-control"  id="arrivalDate" placeholder="23/06/2018" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
                                                     </div>
                                                 </div>
+                                            </div>
+
+
+                                            <!--  <div class="col-md-12">
+
+               <div class="row" data-gutter="none">
+                   <div class="col-md-5 form-group">
+                       <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-mr">
+                           <div class="theme-search-area-section-inner">
+                               <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                               <input id="departureDate" class="theme-search-area-section-input datePickerStart _mob-h" type="text" placeholder="02/25/2018">
+                               <input class="theme-search-area-section-input _desk-h mobile-picker" placeholder="2018-06-27" type="text">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-2"></div>
+                   <div class="col-md-5 form-group" id="arrivaDateVisibility">
+                       <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-bg-white theme-search-area-section-mr">
+                           <div class="theme-search-area-section-inner">
+                               <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                               <input  id="arrivalDate" class="theme-search-area-section-input datePickerEnd _mob-h" value="2018/07/02" type="text" placeholder="Check-out">
+                               <input class="theme-search-area-section-input _desk-h mobile-picker" placeholder="2018-07-02" type="text">
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        <div>-->
+                                            <div class="col-md-12 form-group">
+                                                <div class="col-md-3"><div><label class="control-label" for="Adults">Adults</label></div><div class="select-wrap"><select id="numAdults" name="Adults" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></div></div>
+                                                <div class="col-md-3"><div><label class="control-label" for="Children">Children<span class="age-brackets">(2-15)</span></label></div><div class="select-wrap"><select id="numChildren" name="Children" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select></div></div>
+                                                <div class="col-md-3"><div></div><label class="control-label">Infants<span class="age-brackets">(0-2)</span></label><div class="select-wrap"><select id="numInfants" name="Infants" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></div></div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="col-4 col-sm-2"><div><label class="control-label" for="Adults">Adults</label></div><div class="select-wrap"><select id="numAdults" name="Adults" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></div></div>
-                                        <div class="col-4 col-sm-2"><div><label class="control-label" for="Children">Children<span class="age-brackets">(2-15)</span></label></div><div class="select-wrap"><select id="numChildren" name="Children" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></select></div></div>
-                                        <div class="col-4 col-sm-2 mt-3 mt-sm-0"><div></div><label class="control-label">Infants<span class="age-brackets">(0-2)</span></label><div class="select-wrap"><select id="numInfants" name="Infants" class="form-control form-control-lg"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></div></div>
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <div class="col-md-12 ">
-                                        <button id="searchInfo" class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit-curved">Search</button>
+                                        <div class="col-md-12 form-group">
+                                            <button id="searchInfo" class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit-curved">Search</button>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-                           
                         </div>
-                    </div>
+                    </form>
                 </div>
 
             </div>

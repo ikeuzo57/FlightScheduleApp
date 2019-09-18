@@ -12,6 +12,23 @@ function handleClick(object) {
        $("#arrivalPlaceVisibility").show();
     }
 }
+
+$(function () {
+    $('#datetimepicker6').datetimepicker({
+        format: 'MM/DD/YYYY'
+    });
+    $('#datetimepicker7').datetimepicker({
+        format: 'MM/DD/YYYY',
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#datetimepicker6").on("dp.change", function (e) {
+        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker7").on("dp.change", function (e) {
+        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    });
+});
+
 $(function () {
     $('#searchInfo').on('click', function () {
         //Get all the data passed by the user
