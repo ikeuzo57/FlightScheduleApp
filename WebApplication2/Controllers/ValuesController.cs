@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using WebApplication2.Models;
 
@@ -28,7 +29,7 @@ namespace WebApplication2.Controllers
 
         // POST api/values
         [HttpPost]
-        public IHttpActionResult SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
+        public HttpResponseMessage SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
         {
             List<FlightResult> flightResultList = new List<FlightResult>();
 
@@ -114,8 +115,20 @@ namespace WebApplication2.Controllers
 
                 flightResultList.Add(flightResult);
             }
+            try
+            {
+                var message = Request.CreateResponse(HttpStatusCode.Created, flightResultList);
+                message.Headers.Location = new Uri(Request.RequestUri.ToString());
+                return message;
+           
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+           
 
-            return Json(flightResultList); //flightResultList contains extracted flight info
+            //return Json(flightResultList); //flightResultList contains extracted flight info
         }
 
         // PUT api/values/5

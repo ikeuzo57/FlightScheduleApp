@@ -91,11 +91,11 @@ $(function () {
              
 
         function successFunc(data, status) {
-            alert(data);
+            console.log(data);
         }
 
         function errorFunc(ex) {
-            alert('error: ', ex);
+            console.log('error: ', ex);
         }
        
           
