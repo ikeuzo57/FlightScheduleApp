@@ -46,15 +46,18 @@ namespace WebApplication2.Controllers
 
             searchFlightDetailsObject.Departure = departureCityCode;
             searchFlightDetailsObject.Arrival = arrivalCityCode;
-           // searchFlightDetailsObject.DepartureDate = Convert.ToDateTime(searchFlightDetailsObject.DepartureDate).ToString("MM/dd/yyyy");
+            // searchFlightDetailsObject.DepartureDate = Convert.ToDateTime(searchFlightDetailsObject.DepartureDate).ToString("MM/dd/yyyy");
 
-            //Get searchFlightJsonObject
-            string searchFlightJsonObject =
+            try
+            {
+                //Get searchFlightJsonObject
+                string searchFlightJsonObject =
                 RunAPI.FormatFlightSearchJsonObject(searchFlightDetailsObject.Departure,
                                                     searchFlightDetailsObject.Arrival,
                                                     searchFlightDetailsObject.DepartureDate,
                                                     numberOfAdult: Convert.ToInt32(searchFlightDetailsObject.TotalAdults),
-                                                    numberOfChild: Convert.ToInt32(searchFlightDetailsObject.TotalChildren));
+                                                    numberOfChild: Convert.ToInt32(searchFlightDetailsObject.TotalChildren),
+                                                    numberOfInfant: Convert.ToInt32(searchFlightDetailsObject.TotalInfants));
 
             //Search flights - Call Flight search endpoint
             var searchFlightsResult = RunAPI.PostSearchFlightAsync(RunAPI.SearchFlightEndPoint, searchFlightJsonObject).Result;
@@ -115,9 +118,10 @@ namespace WebApplication2.Controllers
 
                 flightResultList.Add(flightResult);
             }
-            try
-            {
-                var message = Request.CreateResponse(HttpStatusCode.Created, flightResultList);
+           
+               var deserialized = JsonConvert.SerializeObject(flightResultList);
+
+                var message = Request.CreateResponse(HttpStatusCode.Created, deserialized);
                 message.Headers.Location = new Uri(Request.RequestUri.ToString());
                 return message;
            

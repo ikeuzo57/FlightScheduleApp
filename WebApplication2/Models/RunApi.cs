@@ -81,8 +81,8 @@ namespace WebApplication2.Models
         /// <param name="numberOfChild"></param>
         /// <param name="numberOfInfant"></param>
         /// <returns></returns>
-        public static string FormatFlightSearchJsonObject(string departureCity, string destinationCity, string departureDate, string returnDate = "",
-            int numberOfAdult = 1, int numberOfChild = 0, int numberOfInfant = 0)
+        public static string FormatFlightSearchJsonObject(string departureCity, string destinationCity, string departureDate, 
+            int numberOfAdult, int numberOfChild, int numberOfInfant, string returnDate = "")
         {
             dynamic jsonObject = new JObject();
             jsonObject.header = new JObject();

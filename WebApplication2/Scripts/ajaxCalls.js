@@ -41,6 +41,7 @@ $(function () {
         var totalNumInfants = $('#numInfants').val();
         var radioValue = $('input[name=flight-options]:checked').val();
 
+         
         if (radioValue === "OneWay") {
 
             var searchDetailsObjects = {
@@ -60,18 +61,29 @@ $(function () {
                 data: JSON.stringify(searchDetailsObjects),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successFunc,
-                error: errorFunc
+                success: function (data) {
+                    // console.log(data);
+                    $.each(JSON.parse(data), function (index, val) {
+                        console.log("List of Object***");
+                        console.log(val);
+                    });
+                },
+
+                error: function (ex) {
+                    console.log('error: ', ex);
+                    alert('error: ', ex);
+                }
             });
 
-        }
-        else {
+        } else if (radioValue === "RoundTrip") {  // Implementation for RoundTrip
+
+
             var searchDetailsObjectsRoundTrip = {
                 "Departure": departure,
                 "Arrival": arrivalInfo,
                 "DepartureDate": departureDate,
                 "ArrivalDate": arrivalDate,
-                "RoundTrip": radioValue,               
+                "RoundTrip": radioValue,
                 "TotalAdults": totalNumAdults,
                 "TotalChildren": totalNumChildren,
                 "TotalInfants": totalNumInfants
@@ -83,23 +95,24 @@ $(function () {
                 data: JSON.stringify(searchDetailsObjectsRoundTrip),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successFunc,
-                error: errorFunc
+                success: function (data) {
+                    // console.log(data);
+                    $.each(JSON.parse(data), function (index, val) {
+                        console.log("List of Object***");
+                        console.log(val);
+                    });
+                },
+
+                error: function (ex) {
+                    console.log('error: ', ex.responseJSON.ExceptionMessage);
+                    
+                }
             });
 
-        }
-             
 
-        function successFunc(data, status) {
-            console.log(data);
-        }
-
-        function errorFunc(ex) {
-            console.log('error: ', ex);
         }
        
-          
-          
+            
     });
 
 
