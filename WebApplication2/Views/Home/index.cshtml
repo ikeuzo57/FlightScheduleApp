@@ -15,13 +15,17 @@
 
 <body>
     <h2>SearchFlight Here</h2>
-
+    <!--
+        <div class="theme-search-area-tabs-header _c-w _ta-mob-c">
+            <h1 class="theme-search-area-tabs-title">Start Your Jorney</h1>
+            <p><button class="btn btn-primary">@Html.ActionLink("Search Flights Here", "FlightResultData", "Home")</button></p>
+            <p class="theme-search-area-tabs-subtitle">Compare hundreds travel websites at once</p>
+        </div>
+    -->
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-7 col-xl-6 p-0 px-lg-3">
                 <form>
-
-
                     <div id="SearchAreaTabs-3">
                         <div class="theme-search-area theme-search-area-stacked">
                             <div class="theme-search-area-form">
@@ -97,7 +101,7 @@
 
                                     <div class="col-md-12 form-group">
                                         <button id="searchInfo" type="button" class="btn btn-primary btn-lg btn-block">Search</button>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +110,24 @@
                     </div>
                 </form>
             </div>
+
+            <!--Table Result Temp-->
+            <div id="flightResultDiv">
+                <table id="tblFlightResult" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Departure Date</th>
+                            <th scope="col">Departure Time</th>
+                            <th scope="col">Arrival Date</th>
+                            <th scope="col">Arrival Time</th>
+                            <th scope="col">AirLine</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
 
         </div>
     </div>

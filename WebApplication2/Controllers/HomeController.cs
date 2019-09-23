@@ -15,11 +15,15 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public ActionResult SearchFlight()
+        public ActionResult FlightResultData()
         {
-            ViewBag.Title = "Search Flights";
+            ViewBag.Title = "Flight Result";
 
             return View();
         }
+
+
+
+
     }
 }

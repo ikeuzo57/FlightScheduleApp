@@ -27,9 +27,11 @@ namespace WebApplication2.Controllers
             return "value";
         }
 
+      
+
         // POST api/values
         [HttpPost]
-        public HttpResponseMessage SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
+        public IHttpActionResult SearchFlightDetails([FromBody] SearchFlightDetails searchFlightDetailsObject)
         {
             List<FlightResult> flightResultList = new List<FlightResult>();
 
@@ -118,21 +120,19 @@ namespace WebApplication2.Controllers
 
                 flightResultList.Add(flightResult);
             }
-           
-               var deserialized = JsonConvert.SerializeObject(flightResultList);
+          
 
-                var message = Request.CreateResponse(HttpStatusCode.Created, deserialized);
-                message.Headers.Location = new Uri(Request.RequestUri.ToString());
-                return message;
-           
+                return Ok(flightResultList);
+
+
             }
             catch(Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                return NotFound();
             }
            
 
-            //return Json(flightResultList); //flightResultList contains extracted flight info
+            
         }
 
         // PUT api/values/5

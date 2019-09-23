@@ -1,0 +1,48 @@
+﻿
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Travel Mate - Index</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+    @{
+        ViewBag.Title = "SearchFlight";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <link rel="stylesheet" href="~/Content/font-awesome.css" />
+    <link rel="stylesheet" href="~/Content/lineicons.css" />
+    <link rel="stylesheet" href="~/Content/weather-icons.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/styles.css" />
+</head>
+   
+<body>
+    <h1>Flight Result goes here</h1>
+
+    <!-- show departure date/time, arrival datetime, airline and price.-->
+    <div>
+        <table id="tblFlightResult" class="table table-striped">
+            <thead>
+                <tr>                  
+                    <th scope="col">Departure Date</th>
+                    <th scope="col">Departure Time</th>
+                    <th scope="col">Arrival Date</th>
+                    <th scope="col">Arrival Time</th>
+                    <th scope="col">AirLine</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+               
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
